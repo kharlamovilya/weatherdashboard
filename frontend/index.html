@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Interactive Weather Dashboard</h1>
+
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="searchWeather()">Search</button>
+    </div>
+    <div class="unit-box">
+        <label>
+            <input type="radio" name="unit" value="metric" checked>
+            Celsius
+        </label>
+
+        <label>
+            <input type="radio" name="unit" value="imperial">
+            Fahrenheit
+        </label>
+    </div>
+    <div id="error"></div>
+
+    <div id="weatherCard" class="card hidden">
+        <h2 id="cityName"></h2>
+        <p id="temperature"></p>
+        <p id="humidity"></p>
+        <p id="description"></p>
+        <button onclick="addFavorite()">Add to Favorites</button>
+    </div>
+
+    <div class="card">
+        <h2>Favorite Cities</h2>
+        <ul id="favoritesList"></ul>
+    </div>
+
+    <div class="card">
+        <h2>Search History</h2>
+        <ul id="historyList"></ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
