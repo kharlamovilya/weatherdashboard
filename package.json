@@ -1,5 +1,5 @@
 {
-  "name": "interactive-weather-dashboard",
+  "name": "weatherdashboard",
   "version": "1.0.0",
   "description": "Interactive Weather Dashboard for Software Development Practice Project 4",
   "main": "backend/src/server.js",
