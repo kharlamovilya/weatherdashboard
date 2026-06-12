@@ -2,48 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Interactive Weather Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <h1>Interactive Weather Dashboard</h1>
+<main class="app-shell">
+    <section class="hero-card">
+        <div class="hero-text">
+            <p class="eyebrow">Weather App</p>
+            <h1>Check the weather fast</h1>
+            <p class="subtitle">Search a city, save favorites, and quickly open recent searches.</p>
+        </div>
 
-    <div class="search-box">
-        <input type="text" id="cityInput" placeholder="Enter city name">
-        <button onclick="searchWeather()">Search</button>
-    </div>
-    <div class="unit-box">
-        <label>
-            <input type="radio" name="unit" value="metric" checked>
-            Celsius
-        </label>
+        <form id="searchForm" class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name" autocomplete="off">
+            <button id="searchButton" type="submit">Search</button>
+        </form>
 
-        <label>
-            <input type="radio" name="unit" value="imperial">
-            Fahrenheit
-        </label>
-    </div>
-    <div id="error"></div>
+        <div class="unit-box" aria-label="Temperature unit">
+            <label>
+                <input type="radio" name="unit" value="metric" checked>
+                Celsius
+            </label>
+            <label>
+                <input type="radio" name="unit" value="imperial">
+                Fahrenheit
+            </label>
+        </div>
 
-    <div id="weatherCard" class="card hidden">
-        <h2 id="cityName"></h2>
-        <p id="temperature"></p>
-        <p id="humidity"></p>
-        <p id="description"></p>
-        <button onclick="addFavorite()">Add to Favorites</button>
-    </div>
+        <div id="error" role="alert"></div>
+    </section>
 
-    <div class="card">
-        <h2>Favorite Cities</h2>
-        <ul id="favoritesList"></ul>
-    </div>
+    <section id="weatherCard" class="weather-card hidden">
+        <div>
+            <p class="eyebrow">Current Weather</p>
+            <h2 id="cityName"></h2>
+            <p id="description" class="weather-description"></p>
+        </div>
 
-    <div class="card">
-        <h2>Search History</h2>
-        <ul id="historyList"></ul>
-    </div>
-</div>
+        <div class="weather-main">
+            <p id="temperature" class="temperature"></p>
+            <p id="humidity" class="humidity"></p>
+        </div>
+
+        <button id="favoriteButton" class="secondary-button" type="button">Add to Favorites</button>
+    </section>
+
+    <section class="grid">
+        <article class="panel">
+            <div class="panel-header">
+                <h2>Favorite Cities</h2>
+                <span id="favoritesCount" class="count-badge">0</span>
+            </div>
+            <ul id="favoritesList" class="city-list"></ul>
+        </article>
+
+        <article class="panel">
+            <div class="panel-header">
+                <h2>Search History</h2>
+                <span class="count-badge">Latest 5</span>
+            </div>
+            <ul id="historyList" class="city-list"></ul>
+        </article>
+    </section>
+</main>
 
 <script src="script.js"></script>
 </body>
