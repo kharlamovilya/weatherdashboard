@@ -1,0 +1,29 @@
+{
+  "name": "interactive-weather-dashboard",
+  "version": "1.0.0",
+  "description": "Interactive Weather Dashboard for Software Development Practice Project 4",
+  "main": "backend/src/server.js",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "nodemon backend/src/server.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "TeamA",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.17.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
